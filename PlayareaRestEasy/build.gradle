@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+
+
+repositories {
+    mavenCentral()
+    mavenRepo urls: "http://repository.jboss.org/nexus/content/groups/public/"
+}
+
+dependencies {
+    compile 'org.jboss.resteasy:resteasy-jaxrs:2.3.5.Final'
+    compile 'org.jboss.resteasy:resteasy-jackson-provider:2.3.5.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxb-provider:2.3.5.Final'
+    compile 'org.slf4j:slf4j-api:1.7.2'
+    compile 'org.slf4j:slf4j-log4j12:1.7.2'
+}
+
+
+task copyJars << {
+
+	String path = "war/WEB-INF/lib";
+    new File(path).mkdirs()  
+    configurations.compile.each { File file -> 
+        println file.name 
+        File jarFile = new File(path + "/" + file.name)
+        jarFile << file.bytes
+    }
+}
