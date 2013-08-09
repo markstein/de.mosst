@@ -9,5 +9,12 @@ public class PlayareaRsServer implements PlayareaRsInterface{
         System.out.println("Aleph: " + objectAleph.aleph);
         System.out.println("Beth:  " + objectBeth.beth);
     }
+    
+    
+    @Override
+    public String eineMethodeMitException() throws MyException {
+    	
+    	throw new MyException("excccccccccception!!!!!");
+    }
 
 }

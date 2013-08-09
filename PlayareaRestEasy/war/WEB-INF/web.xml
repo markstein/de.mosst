@@ -17,6 +17,13 @@
 		</param-value> 
 	</context-param>
 	
+	<context-param> 
+        <param-name>resteasy.providers</param-name> 
+        <param-value>
+        	 de.mosst.playarea.resteasy.MyExceptionHandler
+		</param-value> 
+	</context-param>
+	
 	<context-param>
 		<param-name>resteasy.servlet.mapping.prefix</param-name>
 		<param-value>/rx/</param-value>
@@ -49,5 +56,7 @@
 		<servlet-name>RESTEasy JSAPI</servlet-name>
 		<url-pattern>/rest.js</url-pattern>
 	</servlet-mapping>
+	
+	
 	
 </web-app>
