@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="MyLiferayPlugins-portlet" basedir="." default="deploy">
+	<property name="plugin.file.default" value="${sdk.dir}/dist/MyLiferayPlugins-portlet.war" />
+	<import file="M:\Liferay\liferay-plugins-sdk-6.1.1\portlets/build-common-portlet.xml" />
+</project>
